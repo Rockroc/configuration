@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>adamwen.alfred.sshkey</string>
+	<key>connections</key>
+	<dict>
+		<key>502C7326-947C-406C-82F6-795B67EBED90</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7727B5D6-40FF-439F-BA5F-9015EFABBC7F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7727B5D6-40FF-439F-BA5F-9015EFABBC7F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>15D5119C-0DC1-4D43-8213-263D45C874A8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Adam Wen</string>
+	<key>description</key>
+	<string>Workflow that copys you public key</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>SSHKey</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>SSH Key</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>15D5119C-0DC1-4D43-8213-263D45C874A8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>sshkey</string>
+				<key>text</key>
+				<string>SSH Key</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>502C7326-947C-406C-82F6-795B67EBED90</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+SSHKEY_FILE=~/.ssh/id_rsa.pub
+
+cat $SSHKEY_FILE | pbcopy
+
+echo "Public Key copied to clipboard. Go for share it!"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7727B5D6-40FF-439F-BA5F-9015EFABBC7F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Alfred v2 workflow version of https://github.com/adamwen829/sshkey for use with Alfred v2 and powerpack.
+
+Please drop an issue for question/bugreporting/... at https://github.com/adamwen829/sshkey/issues
+
+Cheers
+Adam Wen</string>
+	<key>uidata</key>
+	<dict>
+		<key>15D5119C-0DC1-4D43-8213-263D45C874A8</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>502C7326-947C-406C-82F6-795B67EBED90</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>7727B5D6-40FF-439F-BA5F-9015EFABBC7F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.darkof.com</string>
+</dict>
+</plist>
